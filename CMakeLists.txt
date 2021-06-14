@@ -4,5 +4,9 @@ project(multithreading)
 set(CMAKE_CXX_STANDARD 17)
 
 add_executable(multithreading main.cpp Sockets.cpp Sockets.h UDPSockets.cpp UDPSockets.h Errors.h)
+
 find_package(Threads REQUIRED)
 target_link_libraries(multithreading Threads::Threads)
+if(WIN32)
+    target_link_libraries(multithreading wsock32 ws2_32)
+endif()

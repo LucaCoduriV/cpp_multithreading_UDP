@@ -36,7 +36,8 @@ namespace Sockets
     std::string GetAddress(const sockaddr_in& addr)
     {
         char buff[INET6_ADDRSTRLEN] = { 0 };
-        return inet_ntop(addr.sin_family, (void*)&(addr.sin_addr), buff, INET6_ADDRSTRLEN);
+        return "127.0.0.1";//inet_ntop(addr.sin_family, (void*)&(addr.sin_addr),
+        // buff, INET6_ADDRSTRLEN);
     }
 
     unsigned short GetPort(const sockaddr_in &socket) {

@@ -23,6 +23,9 @@ typedef int socklen_t;
 #define SOCKET int
 #define INVALID_SOCKET ((int)-1)
 #endif
+#ifndef INET6_ADDRSTRLEN
+#define INET6_ADDRSTRLEN 46
+#endif
 #include <string>
 
 namespace Sockets
