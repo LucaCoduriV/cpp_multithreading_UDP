@@ -4,9 +4,16 @@
 #include <iostream>
 #include <string>
 #include <thread>
+#include "Utils_Test.h"
+#include "AckHandler_Test.h"
 
 int main()
 {
+    Utils_Test tester;
+    tester.Test();
+    AckHandler_Test tester2;
+    tester2.Test();
+
     if (!Sockets::Start())
     {
         std::cout << "Erreur initialisation WinSock : " << Sockets::GetError();

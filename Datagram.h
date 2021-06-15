@@ -1,7 +1,3 @@
-//
-// Created by lucac on 15.06.2021.
-//
-
 #ifndef MULTITHREADING_DATAGRAM_H
 #define MULTITHREADING_DATAGRAM_H
 
@@ -10,9 +6,15 @@ namespace UDP{
       using ID = uint16_t;
       static constexpr size_t BufferMaxSize = 1400;
       static constexpr size_t DataMaxSize = BufferMaxSize - sizeof(ID);
+      struct Header{
+         ID id;
+         ID ack;
+         uint64_t previousAcks;
+      };
 
-      ID id;
+      Header header;
       std::array<uint8_t, DataMaxSize> data;
+
    };
 }
 
